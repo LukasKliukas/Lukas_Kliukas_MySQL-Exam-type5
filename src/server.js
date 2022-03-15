@@ -9,7 +9,7 @@ const PORT = process.env.SERVER_PORT || 3000;
 
 const app = express();
 
-// middlewar
+// middleware
 app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
