@@ -30,11 +30,11 @@
 
 ### dependencies
 
-"bcryptjs": "^2.4.3",
-"cors": "^2.8.5",
-"dotenv": "^10.0.0",
-"express": "^4.17.1",
-"joi": "^17.6.0",
-"jsonwebtoken": "^8.5.1",
-"morgan": "^1.10.0",
-"mysql2": "^2.3.0"
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.0"
