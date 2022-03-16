@@ -11,9 +11,6 @@
 .BIM {
   color: rgb(116, 116, 116);
 }
-/* .register-name {
-  text-align: center;
-} */
 .register-form {
   display: flex;
   flex-direction: column;
@@ -49,4 +46,28 @@ input {
 .link_to_login_page:hover {
   color: rgb(116, 116, 116);
   text-decoration: underline;
+}
+
+/* Groups page CSS */
+.posts {
+  display: flex;
+  margin: 2rem;
+}
+.post {
+  margin: 2rem;
+  padding: 1rem;
+  text-align: center;
+  border: 2px solid rgb(175, 173, 173);
+  border-radius: 0.5rem;
+}
+.post p {
+  margin: 0.5rem;
+  font-weight: 1000;
+  font-size: 2rem;
+}
+.post h2 {
+  color: rgb(175, 173, 173);
+}
+.SYG {
+  margin-top: 5rem;
 }

@@ -9,7 +9,7 @@ function verifyHash(enteredPass, userObj) {
 }
 function generateJwtToken(userObj) {
   const jwtSecret = process.env.JWT_TOKEN_SECRET;
-  return jwt.sign({ id: userObj.id }, jwtSecret, { expiresIn: '1h' });
+  return jwt.sign({ id: userObj.id }, jwtSecret, { expiresIn: '5h' });
 }
 function verifyJwtToken(token) {
   const jwtSecret = process.env.JWT_TOKEN_SECRET;
