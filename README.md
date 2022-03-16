@@ -23,3 +23,5 @@
 ### devDependencies:
 
 "eslint": "^7.32.0"
+
+### You need to import Db that is in file bills_system.sql

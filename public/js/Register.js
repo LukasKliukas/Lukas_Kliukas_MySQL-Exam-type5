@@ -1,43 +1,36 @@
-//1. uzdedam formai eventa
-//2. surenkam input duomenis
-//3. kuriam registerUser fn
-//4. jei yra klaidu tai handleErrors
-//5. jei nera klaidu tai redirect i login.html
-
 const BASE_URL = 'http://localhost:3000';
 const formEl = document.forms.register;
+const errorsContainerEl = document.querySelector('.errors');
 
+// sustabdyti formos nustatytahi siuntima ir perkrovima
 formEl.addEventListener('submit', (event) => {
   event.preventDefault();
   const registerUserData = {
-    username: formEl.elements.username.value,
-    password: formEl.children.password.value,
+    email: formEl.elements.email.value,
+    password: formEl.elements.password.value,
+    full_name: formEl.elements.fullName.value,
   };
-  console.log(registerUserData);
-  //validation
-  //Todo:
+  // validation
+  // TODO:
   registerUser(registerUserData);
 });
 
 async function registerUser(registerUserData) {
-  console.log('we are trying to register with ===', registerUserData);
-  //siunciam post request ir pridedam formoje ivestus duomenis
-  const resp = await fetch(`${BASE_URL}/register`, {
+  console.log('registerUser ===', registerUserData);
+  const resp = await fetch(`${BASE_URL}/auth/register`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(registerUserData),
   });
-  //pasiverciam gauta atsakyma i js objekta ar masyva ar stringa
-  const respInJs = await resp.json();
-  console.log('respInJs ===', respInJs);
-  if (respInJs.success === false) {
-    handleErrors(respInJs.errors);
+  const dataInJs = await resp.json();
+  console.log('dataInJs ===', dataInJs);
+  if (dataInJs.success === false) {
+    handleErrors(dataInJs.error);
   }
-  if (respInJs.success === true) {
-    //nunaviguoti i profile puslapi
-    window.location.replace(`index.html?username=${registerUserData.username}`);
+  if (dataInJs.success === true) {
+    window.location.replace('login.html');
   }
 }
 

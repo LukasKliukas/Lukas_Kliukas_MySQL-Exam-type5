@@ -1,0 +1,23 @@
+POST http://localhost:3000/auth/register 
+Content-Type: application/json
+
+{
+"email": "bond@email.com", 
+"password": "verysecret123",
+"full_name": "James Bond"
+
+}
+
+###
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+"email": "bond@email.com", 
+"password": "verysecret123"
+}
+
+### 
+
+# eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ3NDE4NTIyLCJleHAiOjE2NDc0MjIxMjJ9.4739nGKMM2S1XMLghvFzapVN5KGzCKO-DPNlI2ygrf4
