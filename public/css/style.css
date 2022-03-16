@@ -71,3 +71,6 @@ input {
 .SYG {
   margin-top: 5rem;
 }
+.posts article {
+  cursor: pointer;
+}

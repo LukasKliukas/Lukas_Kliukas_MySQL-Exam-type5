@@ -22,6 +22,7 @@ function renderGroups(postsArray) {
 
 function makeGroupItem(post) {
   const artEl = document.createElement('article');
+  artEl.setAttribute('onclick', `clickFn(${post.id})`);
   artEl.className = 'post';
   const h2El = document.createElement('h2');
   h2El.textContent = post.name;
@@ -31,4 +32,6 @@ function makeGroupItem(post) {
   return artEl;
 }
 
-// const PostEl = document.querySelector('.post');
+function clickFn(id) {
+  window.location.replace('Bills.html');
+}

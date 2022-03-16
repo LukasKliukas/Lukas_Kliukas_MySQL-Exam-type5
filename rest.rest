@@ -24,3 +24,6 @@ Content-Type: application/json
 GET http://localhost:3000/groups
 
 ###
+
+GET http://localhost:3000/bills/2
+###
