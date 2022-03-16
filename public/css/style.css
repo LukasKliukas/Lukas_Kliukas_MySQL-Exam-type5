@@ -1,0 +1,51 @@
+.logo {
+  height: 5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header {
+  margin-top: 4rem;
+  text-align: center;
+}
+.BIM {
+  color: rgb(116, 116, 116);
+}
+/* .register-name {
+  text-align: center;
+} */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.register-btn {
+  background-color: white;
+  font-weight: 600;
+  padding: 0.5rem;
+  margin: 1rem;
+}
+label,
+input {
+  width: 20rem;
+  height: 2rem;
+}
+label {
+  font-weight: 600;
+}
+input {
+  margin-bottom: 1rem;
+}
+.link_to_login_page {
+  color: black;
+  text-decoration: none;
+}
+.link_to_login_page:hover {
+  color: rgb(116, 116, 116);
+  text-decoration: underline;
+}
