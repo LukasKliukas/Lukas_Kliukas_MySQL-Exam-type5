@@ -22,6 +22,11 @@
   flex-direction: column;
   align-items: center;
 }
+#addGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .register-btn {
   background-color: white;
   font-weight: 600;

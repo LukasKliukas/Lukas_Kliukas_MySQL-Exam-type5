@@ -1,4 +1,5 @@
 const BASE_URL = 'http://localhost:3000';
+const postsDivEl = document.querySelector('.posts-div');
 
 async function getTutorials() {
   const token = localStorage.getItem('token24');
@@ -17,7 +18,8 @@ function renderGroups(postsArray) {
     const singleGroupEl = makeGroupItem(post);
     postsEl.append(singleGroupEl);
   });
-  document.body.append(postsEl);
+  // document.body.append(postsEl);
+  postsDivEl.append(postsEl);
 }
 
 function makeGroupItem(post) {

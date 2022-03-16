@@ -5,7 +5,6 @@ Content-Type: application/json
 "email": "bond@email.com", 
 "password": "verysecret123",
 "full_name": "James Bond"
-
 }
 
 ###
