@@ -23,6 +23,13 @@ Content-Type: application/json
 GET http://localhost:3000/groups
 
 ###
+POST http://localhost:3000/groups
+Content-Type: application/json
+
+{
+"name": "Test savings"
+}
+###
 
 GET http://localhost:3000/bills/2
 ###

@@ -13,7 +13,24 @@ async function getGroupsDb() {
     return false;
   }
 }
+async function insertGroupToDb(newGroupData) {
+  try {
+    const connection = await mysql.createConnection(dbConfig);
+    const sql = `
+    INSERT INTO groups (name) VALUES
+    (?)
+    `;
+    const { name } = newGroupData;
+    const [insertResult] = await connection.execute(sql, [name]);
+    await connection.close();
+    return insertResult;
+  } catch (error) {
+    console.log('klaida įkeliant duomenis', error);
+    res.status(500).send('klaida insertpostDb');
+  }
+}
 
 module.exports = {
   getGroupsDb,
+  insertGroupToDb,
 };

@@ -17,8 +17,6 @@ async function insertUser(full_name, email, pass) {
     return false;
   }
 }
-
-// fn findUserByEmail(email)
 async function findUserByEmail(email) {
   try {
     const conn = await mysql.createConnection(dbConfig);
