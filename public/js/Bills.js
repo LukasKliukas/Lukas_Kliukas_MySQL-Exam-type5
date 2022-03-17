@@ -15,14 +15,14 @@ getBills();
 function renderBills(postsArray) {
   postsArray.forEach((post) => {
     const postTr = document.createElement('tr');
-    const postTr2 = document.createElement('tr');
     const postId = document.createElement('td');
     postId.textContent = `${post.id}`;
     const postDescription = document.createElement('td');
     postDescription.textContent = `${post.description}`;
     const postAmount = document.createElement('td');
     postAmount.textContent = `${post.amount}`;
-    billsEl.append(postTr, postId, postDescription, postAmount, postTr2);
+    postTr.append(postId, postDescription, postAmount);
+    billsEl.append(postTr);
   });
 }
 

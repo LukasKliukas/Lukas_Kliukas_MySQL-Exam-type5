@@ -53,8 +53,6 @@ input {
   color: rgb(116, 116, 116);
   text-decoration: underline;
 }
-
-/* Groups page CSS */
 .posts {
   display: flex;
   flex-wrap: wrap;
@@ -81,8 +79,6 @@ input {
 .posts article {
   cursor: pointer;
 }
-
-/* Bills page CSS */
 
 #bills {
   font-family: Arial, Helvetica, sans-serif;
