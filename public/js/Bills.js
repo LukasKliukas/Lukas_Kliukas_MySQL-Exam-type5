@@ -8,7 +8,6 @@ async function getBills() {
     headers: { Authorization: `Bearer ${token}` },
   });
   const dataInJs = await resp.json();
-  console.log('dataInJs ===', dataInJs.data);
   renderBills(dataInJs.data);
 }
 getBills();
