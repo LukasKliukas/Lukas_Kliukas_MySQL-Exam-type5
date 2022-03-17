@@ -51,21 +51,8 @@ async function validateToken(req, res, next) {
   next();
 }
 
-async function validateTokenAllTutorials(req, res, next) {
-  const authHeaders = req.headers.authorization;
-  const tokenGotFromUser = authHeaders && authHeaders.split(' ')[1];
-  console.log('tokenGotFromUser ===', tokenGotFromUser);
-  if (!tokenGotFromUser) return next();
-  const verifyResult = verifyJwtToken(tokenGotFromUser);
-  if (verifyResult === false) return next();
-  console.log('verifyResult ===', verifyResult);
-  req.validUser = true;
-  next();
-}
-
 module.exports = {
   validateUser,
   validateToken,
-  validateTokenAllTutorials,
   validateUserWithName,
 };
