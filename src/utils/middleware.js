@@ -9,12 +9,10 @@ async function validateUser(req, res, next) {
   });
 
   try {
-    //tikrinimas ar req.body atitinka schema reikalavimus
     await schema.validateAsync(req.body, { abortEarly: false });
-    next(); // keliaujam i kita middleware ar controlleri
+    next();
   } catch (error) {
     console.log('validateUser error ===', error);
-    //map
     const formatedError = error.details.map((detail) => ({
       message: detail.message,
       field: detail.context.key,
@@ -30,12 +28,10 @@ async function validateUserWithName(req, res, next) {
   });
 
   try {
-    //tikrinimas ar req.body atitinka schema reikalavimus
     await schema.validateAsync(req.body, { abortEarly: false });
-    next(); // keliaujam i kita middleware ar controlleri
+    next();
   } catch (error) {
-    console.log('validateUser error ===', error);
-    //map
+    console.log('validateUserWithName error ===', error);
     const formatedError = error.details.map((detail) => ({
       message: detail.message,
       field: detail.context.key,
