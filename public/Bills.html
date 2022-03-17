@@ -17,6 +17,41 @@
       />
       <h2 class="SB">Split Bill</h2>
       <h4 class="BIM">BEST IN MARKET</h4>
+
+      <h3>Group's bills:</h3>
+      <div class="table">
+        <table id="bills">
+          <tr>
+            <th>ID</th>
+            <th>Description</th>
+            <th>Amount</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>For paper</td>
+            <td>2 Eur</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>For electricity</td>
+            <td>3 Eur</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>For electricity</td>
+            <td>3 Eur</td>
+          </tr>
+        </table>
+
+        <form id="addBill">
+          <h2>Add bill</h2>
+          <label for="amount">Amount:</label>
+          <input type="text" name="amount" id="amountInput" />
+          <label for="description">Description:</label>
+          <input type="text" name="description" id="descriptionInput" />
+          <button class="register-btn">Add</button>
+        </form>
+      </div>
     </div>
   </body>
 </html>

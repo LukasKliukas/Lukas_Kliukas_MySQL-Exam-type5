@@ -22,6 +22,7 @@
   flex-direction: column;
   align-items: center;
 }
+#addBill,
 #addGroup {
   display: flex;
   flex-direction: column;
@@ -56,6 +57,7 @@ input {
 /* Groups page CSS */
 .posts {
   display: flex;
+  flex-wrap: wrap;
   margin: 2rem;
 }
 .post {
@@ -78,4 +80,22 @@ input {
 }
 .posts article {
   cursor: pointer;
+}
+
+/* Bills page CSS */
+
+#bills {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+#bills td,
+#bills th {
+  padding: 12px;
+}
+#bills tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+#bills tr:hover {
+  background-color: #ddd;
 }
