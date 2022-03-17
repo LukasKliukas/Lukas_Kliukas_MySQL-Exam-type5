@@ -39,6 +39,6 @@ Content-Type: application/json
 {
 "group_id": 2,
 "amount": "1 Eur",
-"description": "Test Test"
+"description": "Test Tests"
 }
 ###
