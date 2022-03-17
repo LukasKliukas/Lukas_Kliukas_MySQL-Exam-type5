@@ -2,7 +2,6 @@ const BASE_URL = 'http://localhost:3000';
 const formEl = document.forms.register;
 const errorsContainerEl = document.querySelector('.errors');
 
-// sustabdyti formos nustatytahi siuntima ir perkrovima
 formEl.addEventListener('submit', (event) => {
   event.preventDefault();
   const registerUserData = {
@@ -10,13 +9,10 @@ formEl.addEventListener('submit', (event) => {
     password: formEl.elements.password.value,
     full_name: formEl.elements.fullName.value,
   };
-  // validation
-  // TODO:
   registerUser(registerUserData);
 });
 
 async function registerUser(registerUserData) {
-  console.log('registerUser ===', registerUserData);
   const resp = await fetch(`${BASE_URL}/auth/register`, {
     method: 'POST',
     headers: {
@@ -25,7 +21,6 @@ async function registerUser(registerUserData) {
     body: JSON.stringify(registerUserData),
   });
   const dataInJs = await resp.json();
-  console.log('dataInJs ===', dataInJs);
   if (dataInJs.success === false) {
     handleErrors(dataInJs.error);
   }
