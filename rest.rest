@@ -19,7 +19,6 @@ Content-Type: application/json
 
 ### 
 
-# eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ3NDE4NTIyLCJleHAiOjE2NDc0MjIxMjJ9.4739nGKMM2S1XMLghvFzapVN5KGzCKO-DPNlI2ygrf4
 GET http://localhost:3000/groups
 
 ###
@@ -40,6 +39,6 @@ Content-Type: application/json
 {
 "group_id": 2,
 "amount": "1 Eur",
-"description": "Test Test"
+"description": "Test Tests"
 }
 ###
