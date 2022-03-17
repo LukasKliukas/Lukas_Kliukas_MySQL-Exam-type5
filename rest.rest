@@ -33,6 +33,7 @@ Content-Type: application/json
 
 GET http://localhost:3000/bills/2
 ###
+
 POST http://localhost:3000/bills
 Content-Type: application/json
 

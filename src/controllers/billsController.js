@@ -9,14 +9,14 @@ async function getBillsById(req, res) {
     : successResponce(res, foundSingleUser);
 }
 async function createBill(req, res) {
-  const newGroupData = req.body;
-  const { group_id, amount, description } = newGroupData;
-  const postAddingResult = await insertBillsToDb(newGroupData);
-  if (postAddingResult === false) {
+  const newBillData = req.body;
+  const { group_id, amount, description } = newBillData;
+  const billAddingResult = await insertBillsToDb(newBillData);
+  if (billAddingResult === false) {
     res.status(500);
     return;
   }
-  res.json(postAddingResult);
+  res.json(billAddingResult);
 }
 
 module.exports = {

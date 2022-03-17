@@ -26,3 +26,31 @@ function renderBills(postsArray) {
     billsEl.append(postTr, postId, postDescription, postAmount, postTr2);
   });
 }
+
+const formElement = document.getElementById('addBill');
+formElement.addEventListener('submit', formSubmitFn);
+
+function formSubmitFn(event) {
+  event.preventDefault();
+  const groupId = 2;
+  const amountInputValue = document.getElementById('amountInput').value;
+  const descInputValue = document.getElementById('descriptionInput').value;
+  const dataToSend = {
+    group_id: groupId,
+    amount: amountInputValue,
+    description: descInputValue,
+  };
+  createBillToDb(dataToSend);
+}
+
+async function createBillToDb(dataToSend) {
+  const resp = await fetch('http://localhost:3000/bills', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(dataToSend),
+  });
+  const data = await resp.json();
+  location.reload();
+}
