@@ -37,3 +37,27 @@ function makeGroupItem(post) {
 function clickFn(id) {
   window.location.replace('Bills.html');
 }
+
+const formElement = document.getElementById('addGroup');
+formElement.addEventListener('submit', formSubmitFn);
+
+function formSubmitFn(event) {
+  event.preventDefault();
+  const nameInputValue = document.getElementById('nameInput').value;
+  const dataToSend = {
+    name: nameInputValue,
+  };
+  createGroupToDb(dataToSend);
+}
+
+async function createGroupToDb(dataToSend) {
+  const resp = await fetch('http://localhost:3000/groups', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(dataToSend),
+  });
+  const data = await resp.json();
+  location.reload();
+}
