@@ -31,7 +31,6 @@ async function registerUser(registerUserData) {
 
 function handleErrors(erorrArray) {
   errorsContainerEl.innerHTML = '';
-  console.log('erorrArray ===', erorrArray);
   erorrArray.forEach((err) => {
     errorsContainerEl.innerHTML += `<p>${err.message}</p>`;
   });
