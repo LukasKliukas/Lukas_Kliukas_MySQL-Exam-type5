@@ -18,7 +18,6 @@ function renderGroups(postsArray) {
     const singleGroupEl = makeGroupItem(post);
     postsEl.append(singleGroupEl);
   });
-  // document.body.append(postsEl);
   postsDivEl.append(postsEl);
 }
 

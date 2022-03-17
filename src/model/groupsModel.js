@@ -26,7 +26,7 @@ async function insertGroupToDb(newGroupData) {
     return insertResult;
   } catch (error) {
     console.log('klaida įkeliant duomenis', error);
-    res.status(500).send('klaida insertpostDb');
+    res.status(500).send('klaida insertGroupToDb');
   }
 }
 

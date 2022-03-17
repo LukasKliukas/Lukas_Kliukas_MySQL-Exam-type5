@@ -13,6 +13,27 @@ async function getBillsByIdDb(group_id) {
     return false;
   }
 }
+async function insertBillsToDb(newBillData) {
+  try {
+    const connection = await mysql.createConnection(dbConfig);
+    const sql = `
+    INSERT INTO bills (group_id, amount, description) VALUES
+    (?, ?, ?)
+    `;
+    const { group_id, amount, description } = newBillData;
+    const [insertResult] = await connection.execute(sql, [
+      group_id,
+      amount,
+      description,
+    ]);
+    await connection.close();
+    return insertResult;
+  } catch (error) {
+    console.log('klaida įkeliant duomenis', error);
+    res.status(500).send('klaida insertBillsToDb');
+  }
+}
 module.exports = {
   getBillsByIdDb,
+  insertBillsToDb,
 };

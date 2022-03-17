@@ -1,4 +1,4 @@
-const { getBillsByIdDb } = require('../model/billsModel');
+const { getBillsByIdDb, insertBillsToDb } = require('../model/billsModel');
 const { failResponce, successResponce } = require('../utils/dbHelpers');
 
 async function getBillsById(req, res) {
@@ -8,7 +8,18 @@ async function getBillsById(req, res) {
     ? failResponce(res)
     : successResponce(res, foundSingleUser);
 }
+async function createBill(req, res) {
+  const newGroupData = req.body;
+  const { group_id, amount, description } = newGroupData;
+  const postAddingResult = await insertBillsToDb(newGroupData);
+  if (postAddingResult === false) {
+    res.status(500);
+    return;
+  }
+  res.json(postAddingResult);
+}
 
 module.exports = {
   getBillsById,
+  createBill,
 };
