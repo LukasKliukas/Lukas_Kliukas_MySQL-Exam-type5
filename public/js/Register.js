@@ -4,6 +4,12 @@ const errorsContainerEl = document.querySelector('.errors');
 
 formEl.addEventListener('submit', (event) => {
   event.preventDefault();
+  const password = formEl.elements.password.value;
+  const repPassword = formEl.elements.repeat_password.value;
+  if (password !== repPassword) {
+    errorsContainerEl.textContent = 'Passwords do not match';
+    return;
+  }
   const registerUserData = {
     email: formEl.elements.email.value,
     password: formEl.elements.password.value,
